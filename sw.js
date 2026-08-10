@@ -1,4 +1,4 @@
-const CACHE_NAME = "shopee-ads-v1";
+const CACHE_NAME = "shopee-ads-v2";
 const assets = [
   "./",
   "./index.html",
