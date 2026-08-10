@@ -1,8 +1,9 @@
 :root {
-    --primary: #EE4D2D; /* Shopee Orange */
+    --primary: #EE4D2D; 
     --bg-color: #121212;
     --card-bg: #1E1E1E;
     --text: #FFFFFF;
+    --border: #333;
 }
 
 body {
@@ -14,31 +15,77 @@ body {
 }
 
 .container { max-width: 800px; margin: 0 auto; }
-header { text-align: center; margin-bottom: 30px; }
+header { text-align: center; margin-bottom: 20px; }
 
-.upload-section {
-    text-align: center;
-    margin-bottom: 30px;
+/* Styling Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
+.tab-btn {
+    background-color: transparent;
+    color: #aaa;
+    border: 2px solid var(--border);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.tab-btn.active {
+    background-color: var(--card-bg);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.input-section { display: none; text-align: center; margin-bottom: 30px; }
+.input-section.active-section { display: block; }
+
+/* Styling Form Manual */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus { outline: none; border-color: var(--primary); }
 input[type="file"] { display: none; }
 
-.upload-btn {
+.action-btn {
     background-color: var(--primary);
     color: white;
-    padding: 15px 30px;
+    padding: 12px 20px;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     display: inline-block;
-    transition: 0.3s;
+    width: 100%;
 }
 
-.upload-btn:active { transform: scale(0.95); }
+.action-btn:active { transform: scale(0.98); }
+.submit-btn { margin-bottom: 10px; }
+.reset-btn { background-color: transparent; border: 1px solid #FF4444; color: #FF4444; }
 
+/* KPI & Chart */
 .kpi-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 15px;
     margin-bottom: 30px;
 }
@@ -51,8 +98,8 @@ input[type="file"] { display: none; }
     text-align: center;
 }
 
-.card h3 { font-size: 14px; margin: 0; color: #aaa; }
-.card h2 { margin: 10px 0 0 0; font-size: 20px; }
+.card h3 { font-size: 13px; margin: 0; color: #aaa; }
+.card h2 { margin: 10px 0 0 0; font-size: 18px; }
 
 .chart-container {
     background-color: var(--card-bg);
