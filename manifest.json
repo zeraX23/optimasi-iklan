@@ -1,6 +1,6 @@
 {
-  "name": "Shopee Ads Analytics",
-  "short_name": "Ads Analytics",
+  "name": "Shopee Ads Analytics V3",
+  "short_name": "Ads Optima",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#121212",
