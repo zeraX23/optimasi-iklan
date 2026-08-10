@@ -8,6 +8,7 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#EE4D2D">
     
+    <!-- Library Data Science Client-Side 2026 -->
     <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -15,19 +16,19 @@
     <div class="container">
         <header>
             <h1>📊 Shopee Ads Analytics</h1>
-            <p>Sistem Pemrosesan Edge (100% Offline)</p>
+            <p>Edge Computing & AI Diagnostics</p>
         </header>
 
         <!-- Navigasi Mode Input -->
         <div class="tabs">
-            <button id="btnTabUpload" class="tab-btn active">📂 Upload File</button>
+            <button id="btnTabUpload" class="tab-btn active">📂 Upload Laporan</button>
             <button id="btnTabManual" class="tab-btn">✍️ Input Manual</button>
         </div>
 
         <!-- Mode 1: Upload File -->
         <div id="uploadSection" class="input-section active-section">
             <input type="file" id="fileInput" accept=".csv, .xlsx, .xls">
-            <label for="fileInput" class="action-btn">Pilih Laporan Iklan</label>
+            <label for="fileInput" class="action-btn">Pilih File Excel/CSV Shopee</label>
         </div>
 
         <!-- Mode 2: Input Manual -->
@@ -42,7 +43,7 @@
                     <input type="number" id="m_pesanan" placeholder="Jumlah Pesanan" required>
                 </div>
                 <button type="submit" class="action-btn submit-btn">➕ Tambah ke Dashboard</button>
-                <button type="button" id="btnReset" class="action-btn reset-btn">🗑️ Reset Data</button>
+                <button type="button" id="btnReset" class="action-btn reset-btn">🗑️ Reset Semua Data</button>
             </form>
         </div>
 
@@ -54,14 +55,21 @@
             <div class="card"><h3>Avg Konversi</h3><h2 id="avgKonversi">0%</h2></div>
         </div>
 
-        <!-- Area Visualisasi -->
+        <!-- Area Visualisasi Chart -->
         <div class="chart-container">
             <canvas id="roasChart"></canvas>
+        </div>
+
+        <!-- Engine Rekomendasi Optimasi (Baru) -->
+        <div id="optimizationPanel" class="optimization-container">
+            <h3>💡 AI Diagnostik & Rekomendasi Optimasi</h3>
+            <p style="text-align:center; color:#aaa;">Belum ada data untuk dianalisis.</p>
         </div>
     </div>
 
     <script src="app.js"></script>
     <script>
+        // Pendaftaran Service Worker PWA
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js').catch(err => console.log(err));
         }
