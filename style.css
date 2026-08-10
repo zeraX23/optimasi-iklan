@@ -14,95 +14,53 @@ body {
     padding: 20px;
 }
 
-.container { max-width: 800px; margin: 0 auto; }
+.container { max-width: 800px; margin: 0 auto; padding-bottom: 40px; }
 header { text-align: center; margin-bottom: 20px; }
+header h1 { margin-bottom: 5px; font-size: 24px; }
+header p { margin-top: 0; color: #888; font-size: 14px; }
 
-/* Styling Tabs */
-.tabs {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
+/* Tabs */
+.tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
 .tab-btn {
-    background-color: transparent;
-    color: #aaa;
-    border: 2px solid var(--border);
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
+    background-color: transparent; color: #aaa; border: 2px solid var(--border);
+    padding: 10px 15px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s;
+    flex: 1; max-width: 200px;
 }
-
-.tab-btn.active {
-    background-color: var(--card-bg);
-    color: var(--primary);
-    border-color: var(--primary);
-}
+.tab-btn.active { background-color: var(--card-bg); color: var(--primary); border-color: var(--primary); }
 
 .input-section { display: none; text-align: center; margin-bottom: 30px; }
 .input-section.active-section { display: block; }
 
-/* Styling Form Manual */
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-input {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border);
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
+/* Form Elements */
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 15px; }
+input { background-color: var(--card-bg); border: 1px solid var(--border); color: white; padding: 12px; border-radius: 8px; width: 100%; box-sizing: border-box; }
 input:focus { outline: none; border-color: var(--primary); }
 input[type="file"] { display: none; }
 
-.action-btn {
-    background-color: var(--primary);
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    display: inline-block;
-    width: 100%;
-}
-
+.action-btn { background-color: var(--primary); color: white; padding: 15px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; display: inline-block; width: 100%; max-width: 400px; transition: 0.2s; }
 .action-btn:active { transform: scale(0.98); }
 .submit-btn { margin-bottom: 10px; }
 .reset-btn { background-color: transparent; border: 1px solid #FF4444; color: #FF4444; }
 
-/* KPI & Chart */
-.kpi-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.card {
-    background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: 12px;
-    border-left: 4px solid var(--primary);
-    text-align: center;
-}
-
+/* KPI Dashboard */
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-bottom: 30px; }
+.card { background-color: var(--card-bg); padding: 20px; border-radius: 12px; border-left: 4px solid var(--primary); text-align: center; }
 .card h3 { font-size: 13px; margin: 0; color: #aaa; }
 .card h2 { margin: 10px 0 0 0; font-size: 18px; }
 
-.chart-container {
-    background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: 12px;
-}
+/* Chart Container */
+.chart-container { background-color: var(--card-bg); padding: 20px; border-radius: 12px; margin-bottom: 30px; }
+
+/* AI Optimization Diagnostics Panel */
+.optimization-container { margin-top: 30px; padding-top: 20px; border-top: 1px dashed var(--border); }
+.optimization-container h3 { text-align: center; color: var(--primary); margin-bottom: 20px; }
+.opt-card { background-color: var(--card-bg); border-radius: 10px; padding: 15px 20px; margin-bottom: 15px; border-left: 5px solid #555; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+.opt-card h4 { margin: 0 0 10px 0; color: #fff; font-size: 16px; }
+.opt-card ul { margin: 0; padding-left: 20px; color: #ccc; font-size: 14px; line-height: 1.5; }
+.opt-card li { margin-bottom: 8px; }
+
+/* Status Colors for AI logic */
+.opt-success { border-left-color: #28a745; }
+.opt-warning { border-left-color: #ffc107; }
+.opt-danger { border-left-color: #dc3545; }
+.opt-neutral { border-left-color: #17a2b8; }
