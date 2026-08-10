@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee Ads Analytics 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#EE4D2D">
+    
+    <!-- Pustaka Standar Industri 2026 untuk Data di Browser -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Shopee Ads Analytics</h1>
+            <p>Sistem Pemrosesan Edge (100% Offline)</p>
+        </header>
+
+        <div class="upload-section">
+            <input type="file" id="fileInput" accept=".csv, .xlsx, .xls">
+            <label for="fileInput" class="upload-btn">📂 Unggah Laporan Iklan</label>
+        </div>
+
+        <!-- Dashboard KPI -->
+        <div class="kpi-grid">
+            <div class="card"><h3>Total Biaya</h3><h2 id="totalBiaya">Rp 0</h2></div>
+            <div class="card"><h3>Total Penjualan</h3><h2 id="totalPenjualan">Rp 0</h2></div>
+            <div class="card"><h3>Avg ROAS</h3><h2 id="avgRoas">0x</h2></div>
+            <div class="card"><h3>Avg Konversi</h3><h2 id="avgKonversi">0%</h2></div>
+        </div>
+
+        <!-- Area Visualisasi -->
+        <div class="chart-container">
+            <canvas id="roasChart"></canvas>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Registrasi Service Worker untuk kapabilitas Offline
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(() => console.log("Service Worker Terdaftar - Aplikasi siap offline."))
+                .catch(err => console.log("Service Worker Gagal:", err));
+        }
+    </script>
+</body>
+</html>
