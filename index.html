@@ -8,7 +8,6 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#EE4D2D">
     
-    <!-- Pustaka Standar Industri 2026 untuk Data di Browser -->
     <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -19,9 +18,32 @@
             <p>Sistem Pemrosesan Edge (100% Offline)</p>
         </header>
 
-        <div class="upload-section">
+        <!-- Navigasi Mode Input -->
+        <div class="tabs">
+            <button id="btnTabUpload" class="tab-btn active">📂 Upload File</button>
+            <button id="btnTabManual" class="tab-btn">✍️ Input Manual</button>
+        </div>
+
+        <!-- Mode 1: Upload File -->
+        <div id="uploadSection" class="input-section active-section">
             <input type="file" id="fileInput" accept=".csv, .xlsx, .xls">
-            <label for="fileInput" class="upload-btn">📂 Unggah Laporan Iklan</label>
+            <label for="fileInput" class="action-btn">Pilih Laporan Iklan</label>
+        </div>
+
+        <!-- Mode 2: Input Manual -->
+        <div id="manualSection" class="input-section">
+            <form id="manualForm">
+                <div class="form-grid">
+                    <input type="text" id="m_nama" placeholder="Nama Produk (Contoh: Diorio Pants)" required>
+                    <input type="number" id="m_biaya" placeholder="Biaya Iklan (Rp)" required>
+                    <input type="number" id="m_penjualan" placeholder="Penjualan (Rp)" required>
+                    <input type="number" id="m_dilihat" placeholder="Jumlah Dilihat" required>
+                    <input type="number" id="m_klik" placeholder="Jumlah Klik" required>
+                    <input type="number" id="m_pesanan" placeholder="Jumlah Pesanan" required>
+                </div>
+                <button type="submit" class="action-btn submit-btn">➕ Tambah ke Dashboard</button>
+                <button type="button" id="btnReset" class="action-btn reset-btn">🗑️ Reset Data</button>
+            </form>
         </div>
 
         <!-- Dashboard KPI -->
@@ -40,11 +62,8 @@
 
     <script src="app.js"></script>
     <script>
-        // Registrasi Service Worker untuk kapabilitas Offline
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-                .then(() => console.log("Service Worker Terdaftar - Aplikasi siap offline."))
-                .catch(err => console.log("Service Worker Gagal:", err));
+            navigator.serviceWorker.register('sw.js').catch(err => console.log(err));
         }
     </script>
 </body>
